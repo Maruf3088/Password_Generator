@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password generator</title>
+
+
+    <!--Tailwind css and daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--Tailwind config-->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <!--Remix icon cdn-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gradient-to-r from-cyan-500 to-blue-500 h-screen flex justify-center items-center">
+    <div class="bg-slate-300 p-10 rounded-xl shadow-xl flex flex-col gap-4">
+        <h1 class="text-3xl font-bold text-center">Password Generator</h1>
+        <div class="w-full relative">
+            <input type="text" readonly id="passScreen"
+                class="w-full text-xl p-2 rounded-lg outline-none cursor-pointer shadow-md">
+            <i class="ri-clipboard-line absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer text-2xl font-semibold text-gray-500 hover:text-blue-500 duration-300 transition-colors "
+                id="copy"></i>
+        </div>
+
+        <div>
+            <input type="range" id="rangeLevel" class="w-full" min="1" max="16" value="8">
+            <div class="flex justify-between">
+                <p class="text-gray-500 font-semibold">Password Length</p>
+                <p class="text-gray-500 font-semibold" id="rangeNum">8</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-4">
+            <div class="flex gap-2 justify-between ">
+                <label for="lowerCase" class="text-xl font-semibold">Include Lowercase letter (a-z)</label>
+                <input type="checkbox" id="lowerCase" class="w-4  transform translate-y-[2px]">
+            </div>
+            <div class="flex gap-2 justify-between ">
+                <label for="upperCase" class="text-xl font-semibold">Include Uppercase letter (A-Z)</label>
+                <input type="checkbox" id="upperCase" class="w-4  transform translate-y-[2px]">
+            </div>
+            <div class="flex gap-2 justify-between ">
+                <label for="numbers" class="text-xl font-semibold">Include Numbers (0-9)</label>
+                <input type="checkbox" id="numbers" class="w-4  transform translate-y-[2px]">
+            </div>
+            <div class="flex gap-2 justify-between ">
+                <label for="symbols" class="text-xl font-semibold">Include symbols (@$%)</label>
+                <input type="checkbox" id="symbols" class="w-4  transform translate-y-[2px]">
+            </div>
+        </div>
+        <div>
+            <button
+                class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-xl font-bold rounded-xl  text-white btn"
+                id="btn">Generate
+                Password</button>
+        </div>
+        <div class="text-center">
+            Copyright © 2024 Maruf Islam
+        </div>
+
+
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
